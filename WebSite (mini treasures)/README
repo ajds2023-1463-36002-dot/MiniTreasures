@@ -1,0 +1,14 @@
+1. Kumain po muna kami ng pansit na niluto ng mama ni Shean.
+2. The challenge in the website is that there is a problem in checking out items from the cart.
+3. So we first tried to add items to the cart.
+4. Then We tried to checkout a product from the website and showed this error:
+    Fatal error: Uncaught mysqli_sql_exception: Duplicate entry '0' for key 'PRIMARY' in C:\xampp2\htdocs\MiniTreasures\WebSite (mini treasures)\actions.php:111 Stack trace: #0 C:\xampp2\htdocs\MiniTreasures\WebSite (mini treasures)\actions.php(111): mysqli_stmt->execute() #1 {main} thrown in C:\xampp2\htdocs\MiniTreasures\WebSite (mini treasures)\actions.php on line 111
+5. The problem in this is that, in the table "order_items" the data are not auto-incremented. When the website try to add a new item in the table, it duplicates the order id leading to the problem.
+6. So the problem is not in the php file/code itself but in the database.
+7. We headed to the database and in the SQL tab, we entered this code: "TRUNCATE TABLE order_items;". To delete all rows from the table; ready to insert new data.
+8. Then typing this: "ALTER TABLE order_items MODIFY id INT(11) NOT NULL AUTO_INCREMENT;". To turn on the auto-increment when adding new data in the table.
+9. Then we refreshed the page, and it successfully completed the order.
+
+
+
+                                                     ~ ~ ~ THE END ~ ~ ~
